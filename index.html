@@ -1056,6 +1056,52 @@
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&callback=initMap"></script>
 	<!-- /SCRIPTS -->
+
+	<script type="module">
+
+		// Import the functions you need from the SDKs you need
+	  
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+	  
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
+	  
+		// TODO: Add SDKs for Firebase products that you want to use
+	  
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+	  
+		// Your web app's Firebase configuration
+	  
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  
+		const firebaseConfig = {
+	  
+		  apiKey: "AIzaSyBavI1uX_s-t56R1sUnk0AnSZpwGFqTZzs",
+	  
+		  authDomain: "fir-database-connection-2c805.firebaseapp.com",
+	  
+		  databaseURL: "https://fir-database-connection-2c805-default-rtdb.firebaseio.com",
+	  
+		  projectId: "fir-database-connection-2c805",
+	  
+		  storageBucket: "fir-database-connection-2c805.appspot.com",
+	  
+		  messagingSenderId: "833178003532",
+	  
+		  appId: "1:833178003532:web:456b104a5d5d081b84ece9",
+	  
+		  measurementId: "G-6B6SYZDQ94"
+	  
+		};
+	  
+	  
+		// Initialize Firebase
+	  
+		const app = initializeApp(firebaseConfig);
+	  
+		const analytics = getAnalytics(app);
+	  
+	  </script>
 </body>
 
 </html>
