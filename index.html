@@ -429,8 +429,7 @@
 									<li>
 										<div class="list_inner">
 											<i class="icon-mobile"></i>
-											<a
-													href="tel:+966541993290"><span>+966541993290</a></span>
+											<a href="tel:+966541993290"><span>+966541993290</a></span>
 										</div>
 									</li>
 								</ul>
@@ -564,7 +563,6 @@
 
 
 
-		// Fetch the JSON data
 		fetch('portfolio.json')
 			.then(response => {
 				if (!response.ok) {
@@ -573,30 +571,28 @@
 				return response.json();
 			})
 			.then(data => {
-				// Get the portfolio container
 				const portfolioContainer = document.getElementById('portfolio-container');
 
-				// Generate HTML for each project
 				data.forEach(project => {
 					const projectHTML = `
-          <li class="image">
-            <div class="list_inner">
-              <div class="image">
-                <img src="img/thumbs/1-1.jpg" alt="${project.title}" />
-                <div class="main" data-img-url="${project.image}"></div>
-                <div class="details">
-                  <h3>${project.title}</h3>
-                  <a href="${project.link}" target="_blank"><span>Link</span></a>
-                </div>
+        <li class="image">
+          <div class="list_inner">
+            <div class="image">
+              <img src="img/thumbs/1-1.jpg" alt="${project.title}" />
+              <div class="main" style="background-image: url('${project.image}');"></div>
+              <div class="details">
+                <h3>${project.title}</h3>
+                <a href="${project.link}" target="_blank"><span>Link</span></a>
               </div>
             </div>
-          </li>
-        `;
-					// Append the project to the portfolio container
+          </div>
+        </li>
+      `;
 					portfolioContainer.innerHTML += projectHTML;
 				});
 			})
 			.catch(error => console.error('Error loading portfolio data:', error));
+
 	</script>
 </body>
 
