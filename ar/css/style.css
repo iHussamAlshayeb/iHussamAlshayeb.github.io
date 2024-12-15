@@ -29,7 +29,9 @@
 html {
 	overflow-x: hidden;
 	padding: 0px;
-	margin: 0px
+	margin: 0px;
+	direction: rtl;
+	font-family: "Cairo";
 }
 body{
 	overflow-x: hidden;
