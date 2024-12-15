@@ -1230,28 +1230,6 @@ h6 { font-size: 16px; }
 	     -o-transition: all .3s ease;
 	        transition: all .3s ease;
 }
-
-.portfolio_list ul {
-	list-style: none;
-	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-  }
-  
-  .portfolio_list ul li {
-	width: 300px;
-  }
-  
-  .portfolio_list .details {
-	text-align: center;
-	margin-top: 10px;
-  }
-  
-  .portfolio_list .details h3 {
-	font-size: 1.2em;
-	margin: 0;
-  }  
 .cavani_tm_portfolio .portfolio_list{
 	width: 100%;
 	height: auto;

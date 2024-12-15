@@ -396,7 +396,8 @@
 							</div>
 							<div class="portfolio_list">
 								<ul class="gallery_zoom" id="portfolio-container"></ul>
-							  </div>							  
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -494,8 +495,8 @@
 					<a href="https://www.linkedin.com/in/hussam-alshayeb/"><img class="svg"
 							src="img/svg/social/linkedin.svg" alt="" /></a>
 				</li>
-				<li><a href="https://github.com/ihussamalshayeb"><img class="svg"
-							src="img/svg/social/github.svg" alt="" /></a></li>
+				<li><a href="https://github.com/ihussamalshayeb"><img class="svg" src="img/svg/social/github.svg"
+							alt="" /></a></li>
 			</ul>
 		</div>
 	</div>
@@ -562,21 +563,21 @@
 
 
 
-  // Fetch the portfolio JSON data
-  fetch('portfolio.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-      return response.json();
-    })
-    .then(data => {
-      // Get the portfolio container
-      const portfolioContainer = document.getElementById('portfolio-container');
+		// Fetch the JSON data
+		fetch('portfolio.json')
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Failed to fetch portfolio data: ' + response.statusText);
+				}
+				return response.json();
+			})
+			.then(data => {
+				// Get the portfolio container
+				const portfolioContainer = document.getElementById('portfolio-container');
 
-      // Loop through each project and create HTML
-      data.forEach(project => {
-        const projectHTML = `
+				// Generate HTML for each project
+				data.forEach(project => {
+					const projectHTML = `
           <li class="image">
             <div class="list_inner">
               <div class="image">
@@ -584,18 +585,17 @@
                 <div class="main" data-img-url="${project.image}"></div>
                 <div class="details">
                   <h3>${project.title}</h3>
-                  <p>${project.description}</p>
                   <a href="${project.link}" target="_blank"><span>Link</span></a>
                 </div>
               </div>
             </div>
           </li>
         `;
-        // Append to portfolio container
-        portfolioContainer.innerHTML += projectHTML;
-      });
-    })
-    .catch(error => console.error('Error loading portfolio data:', error));
+					// Append the project to the portfolio container
+					portfolioContainer.innerHTML += projectHTML;
+				});
+			})
+			.catch(error => console.error('Error loading portfolio data:', error));
 	</script>
 </body>
 
