@@ -395,57 +395,8 @@
 								</ul>
 							</div>
 							<div class="portfolio_list">
-								<ul class="gallery_zoom">
-									<li class="image">
-										<div class="list_inner">
-											<div class="image">
-												<img src="img/thumbs/1-1.jpg" alt="" />
-												<div class="main" data-img-url="img/portfolio/epah.png"></div>
-												<!-- <span class="icon"><i class="icon-resize-full-alt"></i></span> -->
-												<div class="details">
-													<h3>جمعية الاثار والتراث</h3>
-													<a href="https://epahsociety.me"
-														target="_blank"><span>Link</span></a>
-												</div>
-												<!-- <a class="cavani_tm_full_link zoom" href="img/portfolio/5.jpg"></a> -->
-											</div>
-										</div>
-									</li>
-
-									<li class="image">
-										<div class="list_inner">
-											<div class="image">
-												<img src="img/thumbs/1-1.jpg" alt="" />
-												<div class="main" data-img-url="img/portfolio/amri1.png"></div>
-												<!-- <span class="icon"><i class="icon-resize-full-alt"></i></span> -->
-												<div class="details">
-													<h3>Ali Alamri</h3>
-													<a href="http://aliamri.com/" target="_blank"><span>Link</span></a>
-												</div>
-												<!-- <a class="cavani_tm_full_link zoom" href="img/portfolio/5.jpg"></a> -->
-											</div>
-										</div>
-									</li>
-
-
-									<li class="image">
-										<div class="list_inner">
-											<div class="image">
-												<img src="img/thumbs/1-1.jpg" alt="" />
-												<div class="main" data-img-url="img/portfolio/wild.png"></div>
-												<!-- <span class="icon"><i class="icon-resize-full-alt"></i></span> -->
-												<div class="details">
-													<h3>Wild Life of Saudi Arabia - in progress</h3>
-													<a href="https://wildlifeofsaudiarabia.com/"
-														target="_blank"><span>Link</span></a>
-												</div>
-												<!-- <a class="cavani_tm_full_link zoom" href="img/portfolio/5.jpg"></a> -->
-											</div>
-										</div>
-									</li>
-
-								</ul>
-							</div>
+								<ul class="gallery_zoom" id="portfolio-container"></ul>
+							  </div>							  
 						</div>
 					</div>
 				</div>
@@ -609,6 +560,42 @@
 
 		const analytics = getAnalytics(app);
 
+
+
+  // Fetch the portfolio JSON data
+  fetch('portfolio.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Get the portfolio container
+      const portfolioContainer = document.getElementById('portfolio-container');
+
+      // Loop through each project and create HTML
+      data.forEach(project => {
+        const projectHTML = `
+          <li class="image">
+            <div class="list_inner">
+              <div class="image">
+                <img src="img/thumbs/1-1.jpg" alt="${project.title}" />
+                <div class="main" data-img-url="${project.image}"></div>
+                <div class="details">
+                  <h3>${project.title}</h3>
+                  <p>${project.description}</p>
+                  <a href="${project.link}" target="_blank"><span>Link</span></a>
+                </div>
+              </div>
+            </div>
+          </li>
+        `;
+        // Append to portfolio container
+        portfolioContainer.innerHTML += projectHTML;
+      });
+    })
+    .catch(error => console.error('Error loading portfolio data:', error));
 	</script>
 </body>
 

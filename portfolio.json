@@ -1,0 +1,21 @@
+[
+    {
+      "title": "Wildlife of Saudi Arabia",
+      "description": "A project showcasing the wildlife in Saudi Arabia.",
+      "image": "img/portfolio/wild.png",
+      "link": "https://wildlifeofsaudiarabia.com/"
+    },
+    {
+      "title": "Ali Alamri Portfolio",
+      "description": "A personal portfolio for Ali Alamri.",
+      "image": "img/portfolio/amri1.png",
+      "link": "http://aliamri.com/"
+    },
+    {
+      "title": "EP Archeology Society",
+      "description": "Website for the Eastern Province Archeology Society.",
+      "image": "img/portfolio/epah.png",
+      "link": "https://epahsociety.me"
+    }
+  ]
+  
