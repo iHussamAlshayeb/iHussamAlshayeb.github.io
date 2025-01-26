@@ -29,6 +29,36 @@
 </head>
 
 <body>
+	<button onclick="scrollToTop()" id="back-to-top">⬆️</button>
+	<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        window.onscroll = function() {
+            document.getElementById("back-to-top").style.display = window.scrollY > 200 ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const toggleTheme = () => {
+            document.body.classList.toggle('dark-mode');
+        };
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "حسام الشايب",
+        "jobTitle": "مصمم ومطور مواقع",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "الدمام",
+            "addressCountry": "السعودية"
+        }
+    }
+    </script>
 	<!-- PRELOADER -->
 	<div id="preloader">
 		<div class="loader_line"></div>
