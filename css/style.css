@@ -1271,7 +1271,7 @@ h6 { font-size: 16px; }
 	left: 0px;
 	right: 0px;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
 	background-position: center;
 	
 	-webkit-transition: all .3s ease;
